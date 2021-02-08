@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
 import Home from './HomeComponent';
+import Crochet from './CrochetComponent';
+import Supplies from './SuppliesComponent';
+import Basic from './BasicsComponent';
+import Projects from './ProjectsComponent';
+import History from './HistoryComponent';
+import Popular from './PopularFigureComponent';
+import Advanced from './AdvancedComponent';
+import Favorites from './FavoritesComponent';
+import Map from './MapComponent';
+import Suggestions from './SuggestionsComponent';
 import { View, Platform, StyleSheet, Text, ScrollView, Image } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation-stack';
@@ -29,6 +39,236 @@ const HomeNavigator = createStackNavigator(
         })
     }
 );
+
+const CrochetNavigator = createStackNavigator(
+    {
+        Crochet: {screen: Crochet}
+    },
+    {
+        defaultNavigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#a9d88d'
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                color: '#ffffff'
+            },
+            headerLeft: <Icon
+                name='dribbble'
+                type='font-awesome-5'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }
+)
+
+const SuppliesNavigator = createStackNavigator(
+    {
+        Supplies: {screen: Supplies}
+    },
+    {
+        defaultNavigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#a9d88d'
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                color: '#ffffff'
+            },
+            headerLeft: <Icon
+                name='cut'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }   
+)
+
+const BasicNavigator = createStackNavigator(
+    {
+        Basics: {screen: Basic}
+    },
+    {
+        defaultNavigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#a9d88d'
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                color: '#ffffff'
+            },
+            headerLeft: <Icon
+                name='list-ol'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }   
+)
+
+const ProjectsNavigator = createStackNavigator(
+    {
+        Projects: {screen: Projects}
+    },
+    {
+        defaultNavigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#a9d88d'
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                color: '#ffffff'
+            },
+            headerLeft: <Icon
+                name='socks'
+                type='font-awesome-5'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }   
+)
+
+const HistoryNavigator = createStackNavigator(
+    {
+        History: {screen:History}
+    },
+    {
+        defaultNavigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#a9d88d'
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                color: '#ffffff'
+            },
+            headerLeft: <Icon
+                name='history'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }   
+)
+
+const PopularNavigator = createStackNavigator(
+    {
+        Popular: {screen:Popular}
+    },
+    {
+        defaultNavigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#a9d88d'
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                color: '#ffffff'
+            },
+            headerLeft: <Icon
+                name='user'
+                type='font-awesome-5'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }   
+)
+
+const AdvancedNavigator = createStackNavigator(
+    {
+        Advanced: {screen: Advanced}
+    },
+    {
+        defaultNavigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#a9d88d'
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                color: '#ffffff'
+            },
+            headerLeft: <Icon
+                name='star'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }   
+)
+
+const FavoritesNavigator = createStackNavigator(
+    {
+        Favorites: {screen: Favorites}
+    },
+    {
+        defaultNavigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#a9d88d'
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                color: '#ffffff'
+            },
+            headerLeft: <Icon
+                name='heart'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }   
+)
+
+const MapNavigator = createStackNavigator(
+    {
+        Map: {screen:Map}
+    },
+    {
+        defaultNavigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#a9d88d'
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                color: '#ffffff'
+            },
+            headerLeft: <Icon
+                name='map-marker'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }   
+)
+
+const SuggestionsNavigator = createStackNavigator(
+    {
+        Suggestions: {screen: Suggestions}
+    },
+    {
+        defaultNavigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#a9d88d'
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                color: '#ffffff'
+            },
+            headerLeft: <Icon
+                name='comment'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }   
+)
 
 const CustomDrawerContentComponent = props => (
     <ScrollView>
@@ -63,6 +303,136 @@ const MainNavigator = createDrawerNavigator(
                 )
             }
         },
+        Crochet:{
+            screen: CrochetNavigator,
+            navigationOptions: {
+                drawerIcon: () => (
+                    <Icon
+                        name='dribbble'
+                        type='font-awesome-5'
+                        size={24}
+                        color='#ffffff'
+                    />
+                )
+            }
+        },
+        Supplies:{
+            screen: SuppliesNavigator,
+            navigationOptions: {
+                drawerIcon: () => (
+                    <Icon
+                        name='cut'
+                        type='font-awesome'
+                        size={24}
+                        color='#ffffff'
+                    />
+                )
+            }
+        },
+        Basics:{
+            screen: BasicNavigator,
+            navigationOptions: {
+                drawerIcon: () => (
+                    <Icon
+                        name='list-ol'
+                        type='font-awesome'
+                        size={24}
+                        color='#ffffff'
+                    />
+                )
+            }
+        }, 
+        Projects:{
+            screen: ProjectsNavigator,
+            navigationOptions: {
+                drawerIcon: () => (
+                    <Icon
+                        name='socks'
+                        type='font-awesome-5'
+                        size={24}
+                        color='#ffffff'
+                    />
+                )
+            }
+        },
+        History:{
+            screen: HistoryNavigator,
+            navigationOptions: {
+                drawerIcon: () => (
+                    <Icon
+                        name='history'
+                        type='font-awesome'
+                        size={24}
+                        color='#ffffff'
+                    />
+                )
+            }
+        },
+        Popular:{
+            screen: PopularNavigator,
+            navigationOptions: {
+                drawerIcon: () => (
+                    <Icon
+                        name='user-friends'
+                        type='font-awesome-5'
+                        size={24}
+                        color='#ffffff'
+                    />
+                )
+            }
+        },
+        Advanced:{
+            screen: AdvancedNavigator,
+            navigationOptions: {
+                drawerIcon: () => (
+                    <Icon
+                        name='star'
+                        type='font-awesome'
+                        size={24}
+                        color='#ffffff'
+                    />
+                )
+            }
+        },
+        Favorites:{
+            screen: FavoritesNavigator,
+            navigationOptions: {
+                drawerIcon: () => (
+                    <Icon
+                        name='heart'
+                        type='font-awesome'
+                        size={24}
+                        color='#ffffff'
+                    />
+                )
+            }
+        },
+        Suggestions:{
+            screen: SuggestionsNavigator,
+            navigationOptions: {
+                drawerIcon: () => (
+                    <Icon
+                        name='comment'
+                        type='font-awesome'
+                        size={24}
+                        color='#ffffff'
+                    />
+                )
+            }
+        },
+        Map:{
+            screen: MapNavigator,
+            navigationOptions: {
+                drawerIcon: () => (
+                    <Icon
+                        name='map-marker'
+                        type='font-awesome'
+                        size={24}
+                        color='#ffffff'
+                    />
+                )
+            }
+        }
     },
     {
         drawerBackgroundColor: '#d4ebc6',
@@ -91,7 +461,7 @@ const styles = StyleSheet.create({
     },
     drawerHeader: {
         backgroundColor: '#a9d88d',
-        height: 140,
+        height: 80,
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,
@@ -99,7 +469,7 @@ const styles = StyleSheet.create({
     },
     drawerHeaderText: {
         color: '#ffffff',
-        fontSize: 24,
+        fontSize: 18,
         fontWeight: 'bold'
     },
     drawerImage: {
