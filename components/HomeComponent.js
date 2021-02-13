@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import { Image, View, Text, StyleSheet, Dimensions} from 'react-native';
+import { Image, View, ScrollView, Text, StyleSheet, Dimensions} from 'react-native';
 import { Card } from 'react-native-elements';
 import Carousel, { Pagination } from 'react-native-snap-carousel'
 import CAROUSELDATA from '../shared/carouselData'
+import {HOMEDATA} from '../shared/homeData';
 
 const SLIDER_WIDTH = Dimensions.get('window').width+80
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
@@ -58,21 +59,40 @@ const CarouselCards = () =>{
     )
 }
 
-function rednerFavoriteCards(){
+function RednerFavoriteCards({favorite}){
+  return(
     <Card>
-        
+      <Image
+        source = {require('./images/logo.png')}
+      />
+      <Text style={{textAlign:"center"}}>{favorite.title}</Text>
     </Card>
+  );
 }
 
 class Home extends Component{
+
+  constructor(props){
+    super(props);
+    this.state ={
+      homeData: HOMEDATA
+    }
+  }
     render(){
+      console.log(this.state.homeData)
+      const fav = this.state.homeData.map(item => {
         return(
-            <View style={{paddingTop:25}}>
-                <Text style={{paddingBottom:25, marginLeft: 10, fontSize:25}}>Hello Crafter!</Text>
-                <CarouselCards/>
-                <Text style={{textAlign:'center', fontSize:20}}>Our Favorites</Text>
-            </View>
-        );
+          <RednerFavoriteCards favorite = {item}/>
+        )
+      });
+      return(
+          <ScrollView style={{paddingTop:25}}>
+              <Text style={{paddingBottom:25, marginLeft: 10, fontSize:25}}>Hello Crafter!</Text>
+              <CarouselCards style={{alignItems: 'center', justifyContent: 'center'}}/>
+              <Text style={{textAlign:'center', fontSize:20}}>Our Favorites</Text>
+              {fav}
+          </ScrollView>
+      );
     }
 }
 
@@ -108,6 +128,12 @@ const styles = StyleSheet.create({
       paddingLeft: 20,
       paddingLeft: 20,
       paddingRight: 20
+    }, 
+    carouselContainer:{
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: 50 
     }
   })
 

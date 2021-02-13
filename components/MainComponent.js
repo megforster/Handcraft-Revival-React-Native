@@ -298,7 +298,7 @@ const MainNavigator = createDrawerNavigator(
                         name='home'
                         type='font-awesome'
                         size={24}
-                        color='#ffffff'
+                        color='black'
                     />
                 )
             }
@@ -311,7 +311,7 @@ const MainNavigator = createDrawerNavigator(
                         name='dribbble'
                         type='font-awesome-5'
                         size={24}
-                        color='#ffffff'
+                        color='black'
                     />
                 )
             }
@@ -324,7 +324,7 @@ const MainNavigator = createDrawerNavigator(
                         name='cut'
                         type='font-awesome'
                         size={24}
-                        color='#ffffff'
+                        color='black'
                     />
                 )
             }
@@ -337,7 +337,7 @@ const MainNavigator = createDrawerNavigator(
                         name='list-ol'
                         type='font-awesome'
                         size={24}
-                        color='#ffffff'
+                        color='black'
                     />
                 )
             }
@@ -350,7 +350,7 @@ const MainNavigator = createDrawerNavigator(
                         name='socks'
                         type='font-awesome-5'
                         size={24}
-                        color='#ffffff'
+                        color='black'
                     />
                 )
             }
@@ -363,7 +363,7 @@ const MainNavigator = createDrawerNavigator(
                         name='history'
                         type='font-awesome'
                         size={24}
-                        color='#ffffff'
+                        color='black'
                     />
                 )
             }
@@ -376,7 +376,7 @@ const MainNavigator = createDrawerNavigator(
                         name='user-friends'
                         type='font-awesome-5'
                         size={24}
-                        color='#ffffff'
+                        color='black'
                     />
                 )
             }
@@ -389,7 +389,7 @@ const MainNavigator = createDrawerNavigator(
                         name='star'
                         type='font-awesome'
                         size={24}
-                        color='#ffffff'
+                        color='black'
                     />
                 )
             }
@@ -402,7 +402,7 @@ const MainNavigator = createDrawerNavigator(
                         name='heart'
                         type='font-awesome'
                         size={24}
-                        color='#ffffff'
+                        color='black'
                     />
                 )
             }
@@ -415,7 +415,7 @@ const MainNavigator = createDrawerNavigator(
                         name='comment'
                         type='font-awesome'
                         size={24}
-                        color='#ffffff'
+                        color='black'
                     />
                 )
             }
@@ -428,7 +428,7 @@ const MainNavigator = createDrawerNavigator(
                         name='map-marker'
                         type='font-awesome'
                         size={24}
-                        color='#ffffff'
+                        color='black'
                     />
                 )
             }
