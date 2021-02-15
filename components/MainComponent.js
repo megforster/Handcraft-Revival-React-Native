@@ -10,11 +10,12 @@ import Advanced from './AdvancedComponent';
 import Favorites from './FavoritesComponent';
 import Map from './MapComponent';
 import Suggestions from './SuggestionsComponent';
+import Resource from './ResourceComponent';
 import { View, Platform, StyleSheet, Text, ScrollView, Image } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer';
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer} from 'react-navigation';
 import SafeAreaView from 'react-native-safe-area-view';
 
 const HomeNavigator = createStackNavigator(
@@ -42,7 +43,8 @@ const HomeNavigator = createStackNavigator(
 
 const CrochetNavigator = createStackNavigator(
     {
-        Crochet: {screen: Crochet}
+        Crochet: {screen: Crochet},
+        
     },
     {
         defaultNavigationOptions: ({navigation}) => ({
@@ -63,28 +65,59 @@ const CrochetNavigator = createStackNavigator(
     }
 )
 
+// const SuppliesNavigator = createStackNavigator(
+//     {
+//         Supplies: {screen: Supplies}
+//     },
+//     {
+//         defaultNavigationOptions: ({navigation}) => ({
+//             headerStyle: {
+//                 backgroundColor: '#a9d88d'
+//             },
+//             headerTintColor: '#ffffff',
+//             headerTitleStyle: {
+//                 color: '#ffffff'
+//             },
+//             headerLeft: <Icon
+//                 name='cut'
+//                 type='font-awesome'
+//                 iconStyle={styles.stackIcon}
+//                 onPress={() => navigation.toggleDrawer()}
+//             />,
+//         })
+//     },
+
+    
+// )
+
 const SuppliesNavigator = createStackNavigator(
     {
-        Supplies: {screen: Supplies}
+        Supplies:{
+            screen: Supplies, 
+            navigationOptions:({navigation}) => ({
+                headerLeft: <Icon
+                    name='cut'
+                    type='font-awesome'
+                    iconStyle={styles.stackIcon}
+                    onPress={() => navigation.toggleDrawer()}
+                />
+            })
+        }, 
+        Resource:{screen:Resource}
     },
     {
-        defaultNavigationOptions: ({navigation}) => ({
+        initialRouteName: 'Supplies', 
+        defaultNavigationOptions: {
             headerStyle: {
                 backgroundColor: '#a9d88d'
             },
             headerTintColor: '#ffffff',
             headerTitleStyle: {
                 color: '#ffffff'
-            },
-            headerLeft: <Icon
-                name='cut'
-                type='font-awesome'
-                iconStyle={styles.stackIcon}
-                onPress={() => navigation.toggleDrawer()}
-            />
-        })
-    }   
-)
+            }
+        }
+    }
+);
 
 const BasicNavigator = createStackNavigator(
     {
@@ -270,6 +303,12 @@ const SuggestionsNavigator = createStackNavigator(
     }   
 )
 
+const ResourceNavigator = createStackNavigator(
+   {
+        Resource: {screen: Resource}
+   }
+)
+
 const CustomDrawerContentComponent = props => (
     <ScrollView>
         <SafeAreaView 
@@ -327,7 +366,7 @@ const MainNavigator = createDrawerNavigator(
                         color='black'
                     />
                 )
-            }
+            },
         },
         Basics:{
             screen: BasicNavigator,

@@ -8,6 +8,7 @@ function RenderTopics({topic}){
         <Card>
             <Image
                 source = {require('./images/logo.png')}
+                style={{alignSelf:"center"}}
             />
             <Text>{topic.title}</Text>
         </Card>

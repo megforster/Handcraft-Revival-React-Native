@@ -1,32 +1,38 @@
 import React, { Component } from "react";
-import {ScrollView, Text, Image} from 'react-native';
+import {ScrollView, Text, Image, TouchableOpacity} from 'react-native';
 import { Card } from "react-native-elements";
 import {TOPICDATA} from '../shared/topicData'
 
-function RenderTopics({topic}){
+function RenderTopics({topic}, {nav}){
     return(
-        <Card>
-            <Image
-                source = {require('./images/logo.png')}
-            />
-            <Text>{topic.title}</Text>
-        </Card>
+        <TouchableOpacity 
+            onPress = {() => nav.navigate('Resource', {title: topic.title})}
+        >
+            <Card>
+                <Image
+                    source = {require('./images/logo.png')}
+                    style={{alignSelf:"center"}}
+                />
+                <Text style={{textAlign:"center"}}>{topic.title}</Text>
+            </Card>
+        </TouchableOpacity>
     );
 }
 
 class Supplies extends Component{
-
+    
     constructor(props){
         super(props);
         this.state ={
           topicData: TOPICDATA
         }
     }
-
+    
     render(){
+        const {navigate} = this.props.navigation;
         const suppliesData = this.state.topicData.filter(item => item.topic === "Supplies").map(item => {
             return(
-                <RenderTopics topic = {item}/>
+                <RenderTopics topic = {item} nav = {navigate}/>
               )
             }
         )

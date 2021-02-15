@@ -11,14 +11,14 @@ class Crochet extends Component{
                     source = {require('./images/crochet.jpg')}
                     style ={{height: 300,width: 400}}
                 />
-                <Video
-                    source = {require("../assets/crochet.mp4")} 
+                {/* <Video
+                    source = {require("./videoAssets/crochet.mp4")} 
                     style = {styles.backgroundVideo}
                     controls={true}
                     ref={(ref) => {
                     this.player = ref
                     }} 
-                />
+                /> */}
             </ScrollView>
         );
     }

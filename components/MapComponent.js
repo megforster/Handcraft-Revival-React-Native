@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import {View, Text, StyleSheet, Alert} from 'react-native';
 import { TextInput } from "react-native-gesture-handler";
 import MapView from 'react-native-maps';
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+
+const apiKey = require("../apiKey.json")
 
 class Map extends Component{
     state = {
@@ -33,6 +36,17 @@ class Map extends Component{
         return(
             <View>
                 <Text style={{marginLeft: 10, fontSize:25}}>Store Finder</Text>
+                <GooglePlacesAutocomplete
+                    placeholder='Search'
+                    onPress={(data, details = null) => {
+                        fetchDetails = true
+                        console.log(data, details);
+                    }}
+                    query={{
+                        key: apiKey.api_key,
+                        language: 'en',
+                    }}
+                />
                 <MapView
                     initialRegion={this.state.initialRegion}
                     style= {styles.map}
@@ -49,7 +63,8 @@ class Map extends Component{
 
 const styles = StyleSheet.create({
     map: {
-      height: 500
+      height: 500,
+      marginTop: 50
     },
 });
 

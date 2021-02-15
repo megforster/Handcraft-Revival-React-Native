@@ -64,6 +64,7 @@ function RednerFavoriteCards({favorite}){
     <Card>
       <Image
         source = {require('./images/logo.png')}
+        style={{alignSelf:"center"}}
       />
       <Text style={{textAlign:"center"}}>{favorite.title}</Text>
     </Card>
@@ -91,6 +92,7 @@ class Home extends Component{
               <CarouselCards style={{alignItems: 'center', justifyContent: 'center'}}/>
               <Text style={{textAlign:'center', fontSize:20}}>Our Favorites</Text>
               {fav}
+              {/* <Text>------------------------</Text> */}
           </ScrollView>
       );
     }
