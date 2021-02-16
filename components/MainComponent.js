@@ -65,31 +65,6 @@ const CrochetNavigator = createStackNavigator(
     }
 )
 
-// const SuppliesNavigator = createStackNavigator(
-//     {
-//         Supplies: {screen: Supplies}
-//     },
-//     {
-//         defaultNavigationOptions: ({navigation}) => ({
-//             headerStyle: {
-//                 backgroundColor: '#a9d88d'
-//             },
-//             headerTintColor: '#ffffff',
-//             headerTitleStyle: {
-//                 color: '#ffffff'
-//             },
-//             headerLeft: <Icon
-//                 name='cut'
-//                 type='font-awesome'
-//                 iconStyle={styles.stackIcon}
-//                 onPress={() => navigation.toggleDrawer()}
-//             />,
-//         })
-//     },
-
-    
-// )
-
 const SuppliesNavigator = createStackNavigator(
     {
         Supplies:{

@@ -80,7 +80,7 @@ class Home extends Component{
     }
   }
     render(){
-      console.log(this.state.homeData)
+      // console.log(this.state.homeData)
       const fav = this.state.homeData.map(item => {
         return(
           <RednerFavoriteCards favorite = {item}/>

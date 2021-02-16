@@ -3,10 +3,10 @@ import {ScrollView, Text, Image, TouchableOpacity} from 'react-native';
 import { Card } from "react-native-elements";
 import {TOPICDATA} from '../shared/topicData'
 
-function RenderTopics({topic}, {nav}){
+function RenderTopics({topic, nav}){
     return(
         <TouchableOpacity 
-            onPress = {() => nav.navigate('Resource', {title: topic.title})}
+            onPress = {() => nav('Resource', {title: topic.title})}
         >
             <Card>
                 <Image
