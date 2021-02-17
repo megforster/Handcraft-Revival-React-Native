@@ -18,26 +18,55 @@ import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer';
 import { createAppContainer} from 'react-navigation';
 import SafeAreaView from 'react-native-safe-area-view';
 
+// const HomeNavigator = createStackNavigator(
+//     {
+//         Home: { screen: Home }
+//     },
+//     {
+//         defaultNavigationOptions: ({navigation}) => ({
+//             headerStyle: {
+//                 backgroundColor: '#a9d88d'
+//             },
+//             headerTintColor: '#ffffff',
+//             headerTitleStyle: {
+//                 color: '#ffffff'
+//             },
+//             headerLeft: <Icon
+//                 name='home'
+//                 type='font-awesome'
+//                 iconStyle={styles.stackIcon}
+//                 onPress={() => navigation.toggleDrawer()}
+//             />
+//         })
+//     }
+// );
+
 const HomeNavigator = createStackNavigator(
     {
-        Home: { screen: Home }
+        Home:{
+            screen: Home, 
+            navigationOptions:({navigation}) => ({
+                headerLeft: <Icon
+                    name='home'
+                    type='font-awesome'
+                    iconStyle={styles.stackIcon}
+                    onPress={() => navigation.toggleDrawer()}
+                />
+            })
+        }, 
+        Resource:{screen:Resource}
     },
     {
-        defaultNavigationOptions: ({navigation}) => ({
+        initialRouteName: 'Home', 
+        defaultNavigationOptions: {
             headerStyle: {
                 backgroundColor: '#a9d88d'
             },
             headerTintColor: '#ffffff',
             headerTitleStyle: {
                 color: '#ffffff'
-            },
-            headerLeft: <Icon
-                name='home'
-                type='font-awesome'
-                iconStyle={styles.stackIcon}
-                onPress={() => navigation.toggleDrawer()}
-            />
-        })
+            }
+        }
     }
 );
 
@@ -96,118 +125,171 @@ const SuppliesNavigator = createStackNavigator(
 
 const BasicNavigator = createStackNavigator(
     {
-        Basics: {screen: Basic}
+        Basics:{
+            screen: Basic, 
+            navigationOptions:({navigation}) => ({
+                headerLeft: <Icon
+                    name='list-ol'
+                    type='font-awesome'
+                    iconStyle={styles.stackIcon}
+                    onPress={() => navigation.toggleDrawer()}
+                />
+            })
+        }, 
+        Resource:{screen:Resource}
     },
     {
-        defaultNavigationOptions: ({navigation}) => ({
+        initialRouteName: 'Basics', 
+        defaultNavigationOptions: {
             headerStyle: {
                 backgroundColor: '#a9d88d'
             },
             headerTintColor: '#ffffff',
             headerTitleStyle: {
                 color: '#ffffff'
-            },
-            headerLeft: <Icon
-                name='list-ol'
-                type='font-awesome'
-                iconStyle={styles.stackIcon}
-                onPress={() => navigation.toggleDrawer()}
-            />
-        })
-    }   
-)
+            }
+        }
+    }
+);
 
 const ProjectsNavigator = createStackNavigator(
     {
-        Projects: {screen: Projects}
+        Projects:{
+            screen: Projects, 
+            navigationOptions:({navigation}) => ({
+                headerLeft: <Icon
+                    name='socks'
+                    type='font-awesome-5'
+                    iconStyle={styles.stackIcon}
+                    onPress={() => navigation.toggleDrawer()}
+                />
+            })
+        }, 
+        Resource:{screen:Resource}
     },
     {
-        defaultNavigationOptions: ({navigation}) => ({
+        initialRouteName: 'Projects', 
+        defaultNavigationOptions: {
             headerStyle: {
                 backgroundColor: '#a9d88d'
             },
             headerTintColor: '#ffffff',
             headerTitleStyle: {
                 color: '#ffffff'
-            },
-            headerLeft: <Icon
-                name='socks'
-                type='font-awesome-5'
-                iconStyle={styles.stackIcon}
-                onPress={() => navigation.toggleDrawer()}
-            />
-        })
-    }   
-)
+            }
+        }
+    }
+);
 
 const HistoryNavigator = createStackNavigator(
     {
-        History: {screen:History}
+        History:{
+            screen: History, 
+            navigationOptions:({navigation}) => ({
+                headerLeft: <Icon
+                    name='history'
+                    type='font-awesome'
+                    iconStyle={styles.stackIcon}
+                    onPress={() => navigation.toggleDrawer()}
+                />
+            })
+        }, 
+        Resource:{screen:Resource}
     },
     {
-        defaultNavigationOptions: ({navigation}) => ({
+        initialRouteName: 'History', 
+        defaultNavigationOptions: {
             headerStyle: {
                 backgroundColor: '#a9d88d'
             },
             headerTintColor: '#ffffff',
             headerTitleStyle: {
                 color: '#ffffff'
-            },
-            headerLeft: <Icon
-                name='history'
-                type='font-awesome'
-                iconStyle={styles.stackIcon}
-                onPress={() => navigation.toggleDrawer()}
-            />
-        })
-    }   
-)
+            }
+        }
+    }
+);
 
 const PopularNavigator = createStackNavigator(
     {
-        Popular: {screen:Popular}
+        Popular:{
+            screen: Popular, 
+            navigationOptions:({navigation}) => ({
+                headerLeft: <Icon
+                    name='user'
+                    type='font-awesome-5'
+                    iconStyle={styles.stackIcon}
+                    onPress={() => navigation.toggleDrawer()}
+                />
+            })
+        }, 
+        Resource:{screen:Resource}
     },
     {
-        defaultNavigationOptions: ({navigation}) => ({
+        initialRouteName: 'Popular', 
+        defaultNavigationOptions: {
             headerStyle: {
                 backgroundColor: '#a9d88d'
             },
             headerTintColor: '#ffffff',
             headerTitleStyle: {
                 color: '#ffffff'
-            },
-            headerLeft: <Icon
-                name='user'
-                type='font-awesome-5'
-                iconStyle={styles.stackIcon}
-                onPress={() => navigation.toggleDrawer()}
-            />
-        })
-    }   
-)
+            }
+        }
+    }
+);
+
+// const AdvancedNavigator = createStackNavigator(
+//     {
+//         Advanced: {screen: Advanced}
+//     },
+//     {
+//         defaultNavigationOptions: ({navigation}) => ({
+//             headerStyle: {
+//                 backgroundColor: '#a9d88d'
+//             },
+//             headerTintColor: '#ffffff',
+//             headerTitleStyle: {
+//                 color: '#ffffff'
+//             },
+//             headerLeft: <Icon
+//                 name='star'
+//                 type='font-awesome'
+//                 iconStyle={styles.stackIcon}
+//                 onPress={() => navigation.toggleDrawer()}
+//             />
+//         })
+//     }   
+// )
 
 const AdvancedNavigator = createStackNavigator(
     {
-        Advanced: {screen: Advanced}
+        Advanced:{
+            screen: Advanced, 
+            navigationOptions:({navigation}) => ({
+                headerLeft: <Icon
+                    name='star'
+                    type='font-awesome'
+                    iconStyle={styles.stackIcon}
+                    onPress={() => navigation.toggleDrawer()}
+                />
+            })
+        }, 
+        Resource:{screen:Resource}
     },
     {
-        defaultNavigationOptions: ({navigation}) => ({
+        initialRouteName: 'Advanced', 
+        defaultNavigationOptions: {
             headerStyle: {
                 backgroundColor: '#a9d88d'
             },
             headerTintColor: '#ffffff',
             headerTitleStyle: {
                 color: '#ffffff'
-            },
-            headerLeft: <Icon
-                name='star'
-                type='font-awesome'
-                iconStyle={styles.stackIcon}
-                onPress={() => navigation.toggleDrawer()}
-            />
-        })
-    }   
-)
+            }
+        }
+    }
+);
 
 const FavoritesNavigator = createStackNavigator(
     {

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Image, View, ScrollView, Text, StyleSheet, Dimensions} from 'react-native';
+import { Image, View, ScrollView, Text, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
 import { Card } from 'react-native-elements';
 import Carousel, { Pagination } from 'react-native-snap-carousel'
 import CAROUSELDATA from '../shared/carouselData'
@@ -7,25 +7,32 @@ import {HOMEDATA} from '../shared/homeData';
 
 const SLIDER_WIDTH = Dimensions.get('window').width+80
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
+let navigationFunction = null;
 
 const CarouselCardItem = ({item, index}) => {
+    const nav = {navigationFunction}
     return (
         <View style={styles.container} key={index}>
-          <Image
-            source = {require('./images/logo.png')}
-            // source = {{ uri: item.imgUrl }}
-            style={styles.image}
-          />
-          <Text style={styles.header}>{item.title}</Text>
-          <Text style={styles.body}>{item.body}</Text>
+          <TouchableOpacity
+            onPress = {()=> nav('Resource', {title: item.title})}
+          >
+            <Image
+                source = {require('./images/logo.png')}
+                // source = {{ uri: item.imgUrl }}
+                style={styles.image}
+              />
+            <Text style={styles.header}>{item.title}</Text>
+            <Text style={styles.body}>{item.body}</Text>
+          </TouchableOpacity>
         </View>
       )
 }
 
 const CarouselCards = () =>{
     const [index, setIndex] = React.useState(0)
+    //const [navi, setNavi] = React.useState(nav)
     const isCarousel = React.useRef(null)
-  
+    //console.log(nav)
     return (
       <View>
         <Carousel
@@ -59,15 +66,19 @@ const CarouselCards = () =>{
     )
 }
 
-function RednerFavoriteCards({favorite}){
+function RednerFavoriteCards({favorite, nav}){
   return(
-    <Card>
-      <Image
-        source = {require('./images/logo.png')}
-        style={{alignSelf:"center"}}
-      />
-      <Text style={{textAlign:"center"}}>{favorite.title}</Text>
-    </Card>
+    <TouchableOpacity
+      onPress = {()=> nav('Resource', {title: favorite.title})}
+    >
+      <Card>
+        <Image
+          source = {require('./images/logo.png')}
+          style={{alignSelf:"center"}}
+        />
+        <Text style={{textAlign:"center"}}>{favorite.title}</Text>
+      </Card>
+    </TouchableOpacity>
   );
 }
 
@@ -80,16 +91,17 @@ class Home extends Component{
     }
   }
     render(){
-      // console.log(this.state.homeData)
+      const {navigate} = this.props.navigation;
+      navigationFunction = navigate;
       const fav = this.state.homeData.map(item => {
         return(
-          <RednerFavoriteCards favorite = {item}/>
+          <RednerFavoriteCards favorite = {item} nav={navigate}/>
         )
       });
       return(
           <ScrollView style={{paddingTop:25}}>
               <Text style={{paddingBottom:25, marginLeft: 10, fontSize:25}}>Hello Crafter!</Text>
-              <CarouselCards style={{alignItems: 'center', justifyContent: 'center'}}/>
+              <CarouselCards style={{alignItems: 'center', justifyContent: 'center'}} />
               <Text style={{textAlign:'center', fontSize:20}}>Our Favorites</Text>
               {fav}
               {/* <Text>------------------------</Text> */}

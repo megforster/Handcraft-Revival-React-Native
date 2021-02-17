@@ -18,90 +18,90 @@ export const TOPICDATA =[
         title: "Books For Beginners"
     }, 
     {
-        id: 0, 
+        id: 3, 
         topic: "Basics", 
         imagUrl: "", 
         title: "Slip Knots, Chaining, And Slip Stitches"
     }, 
     {
-        id: 1, 
+        id: 4, 
         topic: "Basics", 
         imagUrl: "", 
         title: "Where To Insert Your Hook"
     }, 
     {
-        id: 2,
+        id: 5,
         topic: "Basics", 
         imagUrl: "", 
-        title: "Starting A New Row"
+        title: "Single, Double, Half Double, And Triple Crochet"
     }, 
     {
-        id: 0,
+        id: 6,
         topic: "Projects", 
         imgUrl: "", 
         title:"Scarves"
     },
     {
-        id: 1,
+        id: 7,
         topic: "Projects", 
         imgUrl: "", 
         title:"Small Shapes"
     },
     {
-        id: 2,
+        id: 8,
         topic: "Projects", 
         imgUrl: "", 
         title:"Blankets"
     },
     {
-        id: 0,
+        id: 9,
         topic: "History", 
         imgUrl: "", 
         title:"Where Did Crochet Come From"
     },
     {
-        id: 1,
+        id: 10,
         topic: "History", 
         imgUrl: "", 
         title:"What Came First, Crochet Or Knitting?"
     },
     {
-        id: 2,
+        id: 11,
         topic: "History", 
         imgUrl: "", 
         title:"Who Crocheted?"
     }, 
     {
-        id: 0,
+        id: 12,
         topic: "Popular", 
         imgUrl: "", 
         title:"The Crochet Crowd"
     },
     {
-        id: 1,
+        id: 13,
         topic: "Popular", 
         imgUrl: "", 
         title:"Moogly"
     },
     {
-        id: 2,
+        id: 14,
         topic: "Popular", 
         imgUrl: "", 
         title:"Bella Coco"
     }, {
-        id: 0,
+        id: 15,
         topic: "Advanced", 
         imgUrl: "", 
         title:"Creating Crochet Patterns"
     },
     {
-        id: 1,
+        id: 16,
         topic: "Advanced", 
         imgUrl: "", 
         title:"Complex Stitches"
     },
     {
-        id: 2,
+        id: 17,
         topic: "Advanced", 
         imgUrl: "", 
         title:"Amigurumi"

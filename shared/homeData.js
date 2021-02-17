@@ -6,7 +6,7 @@ export const HOMEDATA = [
     },
     {
         id: 1,
-        title: "Headbands",
+        title: "Blankets",
         imgUrl: "./images/logo.png"
     },
     {

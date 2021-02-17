@@ -1,14 +1,14 @@
 export default CAROUSELDATA = [
     {
-        title: "Crochet vs Knitting",
+        title: "Starting A New Row",
         imgUrl: "./images/logo.png"
     },
     {
-        title: "Favorite Yarn Brands",
+        title: "Crochet Hooks",
         imgUrl: "./images/logo.png"
     },
     {
-        title: "Where Did Crochet Come From?",
+        title: "The Crochet Crowd",
         imgUrl: "./images/logo.png"
     }
 ]

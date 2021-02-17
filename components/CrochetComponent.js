@@ -11,7 +11,7 @@ class Crochet extends Component{
                     source = {require('./images/crochet.jpg')}
                     style ={{height: 300,width: 400}}
                 />
-                <Video
+                {/* <Video
                     source = {require("./videoAssets/crochet.mp4")} 
                     rate={1.0}
                     isMuted={false}
@@ -19,7 +19,7 @@ class Crochet extends Component{
                     shouldPlay
                     isLooping
                     style={{width: 400, height: 300}}
-                />
+                /> */}
             </ScrollView>
         );
     }

@@ -1,17 +1,21 @@
 import React, { Component } from "react";
-import {ScrollView, Text, Image} from 'react-native';
+import {ScrollView, Text, Image, TouchableOpacity} from 'react-native';
 import { Card } from "react-native-elements";
 import {TOPICDATA} from '../shared/topicData'
 
-function RenderTopics({topic}){
+function RenderTopics({topic, nav}){
     return(
-        <Card>
-            <Image
-                source = {require('./images/logo.png')}
-                style={{alignSelf:"center"}}
-            />
-            <Text>{topic.title}</Text>
-        </Card>
+        <TouchableOpacity 
+            onPress = {() => nav('Resource', {title: topic.title})}
+        >
+            <Card>
+                <Image
+                    source = {require('./images/logo.png')}
+                    style={{alignSelf:"center"}}
+                />
+                <Text>{topic.title}</Text>
+            </Card>
+        </TouchableOpacity>
     );
 }
 
@@ -24,9 +28,10 @@ class Popular extends Component{
     }
 
     render(){
+        const {navigate} = this.props.navigation;
         const popularData = this.state.topicData.filter(item => item.topic === "Popular").map(item => {
             return(
-                <RenderTopics topic = {item}/>
+                <RenderTopics topic = {item} nav={navigate}/>
               )
             }
         )
