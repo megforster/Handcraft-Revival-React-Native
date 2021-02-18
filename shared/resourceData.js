@@ -68,8 +68,8 @@ export const RESOURCEDATA = [
     {
         id: 11, 
         title: "The Crochet Crowd", 
-        important: "\nTwitter: https://twitter.com/thecrochetcrowd\n\nInstagram: https://www.instagram.com/thecrochetcrowd/?hl=en\n\nFacebook:https://www.facebook.com/groups/TheCrochetCrowdStitchSocial\n\nYouTube: https://www.youtube.com/channel/UCVbbBdiTKMCx5VII4IKDU7A\n\nPintrest: https://pinterest.com/thecrochetcrowd", 
-        content: "Content :)"
+        important: "",
+        content: "\nTwitter: https://twitter.com/thecrochetcrowd\n\nInstagram: https://www.instagram.com/thecrochetcrowd/?hl=en\n\nFacebook:https://www.facebook.com/groups/TheCrochetCrowdStitchSocial\n\nYouTube: https://www.youtube.com/channel/UCVbbBdiTKMCx5VII4IKDU7A\n\nPintrest: https://pinterest.com/thecrochetcrowd", 
     }, 
     {
         id: 12, 

@@ -19,7 +19,13 @@ import { createAppContainer} from 'react-navigation';
 import SafeAreaView from 'react-native-safe-area-view';
 import {FAVORITESDATA} from '../shared/favorites'
 
-let favData = [];
+let favData = FAVORITESDATA;
+
+const updateFavorites=(fav)=>{
+    console.log("updateFavorites"+fav)
+    favData.push(fav)
+    console.log("updateFavorites"+favData)
+}
 
 const HomeNavigator = createStackNavigator(
     {
@@ -232,7 +238,7 @@ const AdvancedNavigator = createStackNavigator(
                 />
             })
         }, 
-        Resource:{screen:Resource}
+        Resource:{screen:props=><Resource {...props} updateFavorites = {updateFavorites}/>}
     },
     {
         initialRouteName: 'Advanced', 
@@ -250,7 +256,8 @@ const AdvancedNavigator = createStackNavigator(
 
 const FavoritesNavigator = createStackNavigator(
     {
-        Favorites: {screen: Favorites}, 
+        Favorites: {screen: props=> <Favorites {...props} favData={favData}/>}, 
+        // FavoriteItems:{this.state.fa}
     },
     {
         defaultNavigationOptions: ({navigation}) => ({
@@ -268,7 +275,7 @@ const FavoritesNavigator = createStackNavigator(
                 onPress={() => navigation.toggleDrawer()}
             />
         }),
-    }, 
+    }
 )
 
 const MapNavigator = createStackNavigator(
@@ -497,20 +504,21 @@ const AppNavigator = createAppContainer(MainNavigator)
 
 class Main extends Component {
 
-    constructor(props){
-        super(props);
-        this.state ={
-          favData: FAVORITESDATA
-        }
-      }
+    // constructor(props){
+    //     super(props);
+    //     this.state ={
+    //       favData: FAVORITESDATA
+    //     }
+    // }
 
     render() {
+        //favData = this.state.favData;
         return (
             <View style={{
                 flex: 1,
                 paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight
             }}>
-                <AppNavigator screenProps={{fav:this.state.favData}}/>
+                <AppNavigator/>
             </View>
         );
     }

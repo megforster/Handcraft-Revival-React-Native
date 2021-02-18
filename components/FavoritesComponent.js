@@ -23,24 +23,21 @@ function RenderFavorites({favorite}){
 // }
 
 class Favorites extends Component{
-    
-    constructor(props){
-        super(props);
-        // console.log(props.screenProps.fav)
-        this.state={
-            favorites:props.screenProps.fav
-        }
-        //forceRefresh(this)
+    componentDidUpdate(){
+        console.log("DidUPdate: "+this.props)
     }
-    
+
     render(){
         // const [refreshing, setRefreshing] = React.useState(false);
         // const onRefresh = React.useCallback(()=>{
         //     setRefreshing(true);
         //     withNavigation(2000).then(()=> setRefreshing(false));
         // },[]);
+        console.log("-----------------------")
+        console.log(this.props)
+        console.log("-----------------------")
         const {navigate} = this.props.navigation;
-        const favorites = this.props.screenProps.fav.map(item => {
+        const favorites = this.props.favData.map(item => {
             return(
                 <RenderFavorites favorite = {item} nav = {navigate}/>
               )
