@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {ScrollView, Text, Image, TouchableOpacity} from 'react-native';
+import {ScrollView, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import { Card } from "react-native-elements";
 import {TOPICDATA} from '../shared/topicData'
 
@@ -8,12 +8,13 @@ function RenderTopics({topic, nav}){
         <TouchableOpacity
             onPress = {() => nav('Resource', {title: topic.title})}
         >
-            <Card>
+            <Card containerStyle={styles.card}>
                 <Image
-                    source = {require('./images/logo.png')}
-                    style={{alignSelf:"center"}}
+                    source = {topic.imgUrl}
+                    style={styles.image}
                 />
-                <Text>{topic.title}</Text>
+                <Text style={{textAlign:"center", marginTop:10, color:"white", fontWeight:"bold", fontSize:18}}>{topic.title}</Text>
+                
             </Card>
         </TouchableOpacity>
     );
@@ -45,5 +46,16 @@ class Basic extends Component{
         );
     }
 }
+
+const styles = StyleSheet.create({
+    image: {
+        width: 300,
+        height: 300,
+        alignSelf: "center",
+    }, 
+    card:{
+        backgroundColor:'#a9d88d'
+    }
+})
 
 export default Basic;

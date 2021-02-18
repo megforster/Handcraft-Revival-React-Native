@@ -5,25 +5,18 @@ import Carousel, { Pagination } from 'react-native-snap-carousel'
 import CAROUSELDATA from '../shared/carouselData'
 import {HOMEDATA} from '../shared/homeData';
 
-const SLIDER_WIDTH = Dimensions.get('window').width+80
+const SLIDER_WIDTH = Dimensions.get('window').width
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
 let navigationFunction = null;
 
 const CarouselCardItem = ({item, index}) => {
-    const imgPath = item.imgUrl
-    console.log(imgPath)
     return (
         <View style={styles.container} key={index}>
           <TouchableOpacity
             onPress = {()=> navigationFunction('Resource', {title: item.title})}
           >
             <Image
-                source = {imgPath}
-                //source = {require(item.imgUrl)}
-                //source = {(imgPath)}
-                //source = {imgPath}
-                //source = {require(`${imgPath}`)}
-                //source = {{ uri: imgPath }}
+                source = {item.imgUrl}
                 style={styles.image}
               />
             <Text style={styles.header}>{item.title}</Text>
@@ -75,12 +68,12 @@ function RednerFavoriteCards({favorite, nav}){
     <TouchableOpacity
       onPress = {()=> nav('Resource', {title: favorite.title})}
     >
-      <Card>
+      <Card containerStyle={styles.card}>
         <Image
-          source = {require('./images/logo.png')}
-          style={{alignSelf:"center"}}
+          source = {favorite.imgUrl}
+          style={styles.image}
         />
-        <Text style={{textAlign:"center"}}>{favorite.title}</Text>
+        <Text style={{textAlign:"center", marginTop:10, color:"white", fontWeight:"bold", fontSize:18}}>{favorite.title}</Text>
       </Card>
     </TouchableOpacity>
   );
@@ -103,7 +96,7 @@ class Home extends Component{
         )
       });
       return(
-          <ScrollView style={{paddingTop:25}}>
+          <ScrollView>
               <Text style={{paddingBottom:25, marginLeft: 10, fontSize:25}}>Hello Crafter!</Text>
               <CarouselCards style={{alignItems: 'center', justifyContent: 'center'}} />
               <Text style={{textAlign:'center', fontSize:20}}>Our Favorites</Text>
@@ -116,7 +109,7 @@ class Home extends Component{
 
 const styles = StyleSheet.create({
     container: {
-      backgroundColor: 'white',
+      backgroundColor:'#a9d88d',
       borderRadius: 8,
       width: ITEM_WIDTH,
       paddingBottom: 40,
@@ -132,26 +125,31 @@ const styles = StyleSheet.create({
     image: {
       width: ITEM_WIDTH,
       height: 300,
+      alignSelf: "center"
     },
     header: {
-      color: "#222",
+      color: "white",
       fontSize: 28,
       fontWeight: "bold",
       paddingLeft: 20,
-      paddingTop: 20
+      paddingTop: 20, 
+      alignSelf:'center'
     },
     body: {
       color: "#222",
       fontSize: 18,
       paddingLeft: 20,
       paddingLeft: 20,
-      paddingRight: 20
+      paddingRight: 20, 
     }, 
     carouselContainer:{
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
       padding: 50 
+    }, 
+    card:{
+      backgroundColor:'#a9d88d'
     }
   })
 

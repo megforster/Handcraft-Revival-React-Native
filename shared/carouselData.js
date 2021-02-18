@@ -1,14 +1,14 @@
 export default CAROUSELDATA = [
     {
         title: "Amigurumi",
-        imgUrl: "./images/logo.png"
+        imgUrl: require('../components/images/amigurumi.jpg')
     },
     {
         title: "Crochet Hooks",
-        imgUrl: "./images/logo.png"
+        imgUrl: require('../components/images/crochethooks.jpg')
     },
     {
         title: "The Crochet Crowd",
-        imgUrl: "./images/logo.png"
+        imgUrl: require('../components/images/crochet-crowd.jpg')
     }
 ]

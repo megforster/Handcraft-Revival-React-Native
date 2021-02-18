@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import {ScrollView, Text, Image, TouchableOpacity} from 'react-native';
+import {ScrollView, Text, Image, TouchableOpacity, RefreshControl} from 'react-native';
 import { Card } from "react-native-elements";
+import { withNavigation } from "react-navigation";
 
 function RenderFavorites({favorite}){
     return(
@@ -17,23 +18,29 @@ function RenderFavorites({favorite}){
         </TouchableOpacity>
     );
 }
+// function forceRefresh(item){
+//      item.forceUpdate()   
+// }
 
 class Favorites extends Component{
+    
     constructor(props){
         super(props);
-        console.log(props.screenProps.fav)
+        // console.log(props.screenProps.fav)
         this.state={
             favorites:props.screenProps.fav
         }
+        //forceRefresh(this)
     }
-    componentWillReceiveProps(){
-        this.setState({favorites:this.props.screenProps.fav})
-    }
-
+    
     render(){
-        console.log("FAVORITES: "+this.props.screenProps.fav.length)
+        // const [refreshing, setRefreshing] = React.useState(false);
+        // const onRefresh = React.useCallback(()=>{
+        //     setRefreshing(true);
+        //     withNavigation(2000).then(()=> setRefreshing(false));
+        // },[]);
         const {navigate} = this.props.navigation;
-        const favorites = this.state.favorites.map(item => {
+        const favorites = this.props.screenProps.fav.map(item => {
             return(
                 <RenderFavorites favorite = {item} nav = {navigate}/>
               )
@@ -41,8 +48,10 @@ class Favorites extends Component{
         )
 
         return(
-            <ScrollView >
-                <Text>Favorites</Text>
+             <ScrollView
+             // refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>}
+             > 
+                <Text style={{marginLeft: 10, fontSize:25}}>Favorites</Text>
                 {favorites}
             </ScrollView>
         );

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {View, Text, Button, StyleSheet, TextInput, Image} from 'react-native';
+import {View, Text, Button, StyleSheet, TextInput, Image, Alert} from 'react-native';
 import { Card } from 'react-native-elements';
 
 class Suggestions extends Component{
@@ -16,6 +16,22 @@ class Suggestions extends Component{
         }
     }
 
+    handleSubmit(){
+        Alert.alert(
+            "Thank you for your suggestion!",
+            "We hope you continue to enjoy Handcraft Revival.",
+            [
+                {
+                    text:"Okay", 
+                    onPress: () => {
+                        this.resetForm()
+                    }
+                }
+            ]
+            
+        )
+    }
+
     resetForm(){
         this.setState({
             suggest: "",
@@ -30,7 +46,7 @@ class Suggestions extends Component{
         return(
             <View >
                 <Text style={{marginLeft: 10, fontSize:25}}>Suggestions</Text>
-                <Card>
+                <Card containerStyle={styles.card}>
                     <Text style={styles.titleText}>Suggestion</Text>
                     <TextInput 
                         style={styles.textInput} 
@@ -60,10 +76,12 @@ class Suggestions extends Component{
                         value = {this.state.r3} 
                         onChangeText={text => this.setState({r3: text})}/>
                     <Button 
+                        style={{borderColor:"white", borderWidth:1}}
                         title="Submit" 
-                        onPress={()=> this.resetForm()} 
+                        onPress={()=> this.handleSubmit()} 
                         color='#a9d88d'
-                        />
+                        
+                    />
                 </Card>
                 <Image
                     source = {require('./images/logo.png')}
@@ -76,11 +94,20 @@ class Suggestions extends Component{
 
 const styles = StyleSheet.create({
     titleText:{
-        textAlign: "center"
+        textAlign: "center",
+        color: "white"
     },
     textInput:{
-        borderColor: 'black',
-        borderWidth: 1
+        borderColor: 'white',
+        borderWidth: 1,
+        marginBottom:10
+    },
+    card:{
+        backgroundColor:'#a9d88d'
+    } , 
+    button:{
+        borderWidth: 1,
+        borderColor: 'white'
     }
 })
 
