@@ -1,6 +1,6 @@
 export default CAROUSELDATA = [
     {
-        title: "Starting A New Row",
+        title: "Amigurumi",
         imgUrl: "./images/logo.png"
     },
     {

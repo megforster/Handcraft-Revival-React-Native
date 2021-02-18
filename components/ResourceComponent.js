@@ -3,7 +3,7 @@ import {ScrollView, Text, Image} from 'react-native';
 import { Icon } from "react-native-elements";
 import {RESOURCEDATA} from '../shared/resourceData'
 
-function RenderResource({info}){
+function RenderResource({info, fav}){
     return(
         <ScrollView>
             <Text style={{marginLeft: 10, fontSize:25}}>{info.title}</Text>
@@ -13,7 +13,7 @@ function RenderResource({info}){
                 color="#f50"
                 raised
                 reverse
-                onPress={() => console.log("Pressed")}
+                onPress={() => fav.push({id:info.title, title:info.title})}
             />
             <Text style={{marginLeft: 10, fontSize:18}}>Importance</Text>
             <Text style={{marginLeft: 10, marginRight:10}}>{info.important}</Text>
@@ -34,7 +34,7 @@ class Resource extends Component{
     render(){
         const data = this.state.resourceData.filter(item => item.title === this.props.navigation.state.params.title).map(item => {
             return (
-                <RenderResource info = {item}/>
+                <RenderResource info = {item} fav = {this.props.screenProps.fav}/>
             )
         });
 

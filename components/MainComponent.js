@@ -17,29 +17,9 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer';
 import { createAppContainer} from 'react-navigation';
 import SafeAreaView from 'react-native-safe-area-view';
+import {FAVORITESDATA} from '../shared/favorites'
 
-// const HomeNavigator = createStackNavigator(
-//     {
-//         Home: { screen: Home }
-//     },
-//     {
-//         defaultNavigationOptions: ({navigation}) => ({
-//             headerStyle: {
-//                 backgroundColor: '#a9d88d'
-//             },
-//             headerTintColor: '#ffffff',
-//             headerTitleStyle: {
-//                 color: '#ffffff'
-//             },
-//             headerLeft: <Icon
-//                 name='home'
-//                 type='font-awesome'
-//                 iconStyle={styles.stackIcon}
-//                 onPress={() => navigation.toggleDrawer()}
-//             />
-//         })
-//     }
-// );
+let favData = [];
 
 const HomeNavigator = createStackNavigator(
     {
@@ -239,29 +219,6 @@ const PopularNavigator = createStackNavigator(
     }
 );
 
-// const AdvancedNavigator = createStackNavigator(
-//     {
-//         Advanced: {screen: Advanced}
-//     },
-//     {
-//         defaultNavigationOptions: ({navigation}) => ({
-//             headerStyle: {
-//                 backgroundColor: '#a9d88d'
-//             },
-//             headerTintColor: '#ffffff',
-//             headerTitleStyle: {
-//                 color: '#ffffff'
-//             },
-//             headerLeft: <Icon
-//                 name='star'
-//                 type='font-awesome'
-//                 iconStyle={styles.stackIcon}
-//                 onPress={() => navigation.toggleDrawer()}
-//             />
-//         })
-//     }   
-// )
-
 const AdvancedNavigator = createStackNavigator(
     {
         Advanced:{
@@ -293,7 +250,7 @@ const AdvancedNavigator = createStackNavigator(
 
 const FavoritesNavigator = createStackNavigator(
     {
-        Favorites: {screen: Favorites}
+        Favorites: {screen: Favorites}, 
     },
     {
         defaultNavigationOptions: ({navigation}) => ({
@@ -310,8 +267,8 @@ const FavoritesNavigator = createStackNavigator(
                 iconStyle={styles.stackIcon}
                 onPress={() => navigation.toggleDrawer()}
             />
-        })
-    }   
+        }),
+    }, 
 )
 
 const MapNavigator = createStackNavigator(
@@ -539,13 +496,21 @@ const MainNavigator = createDrawerNavigator(
 const AppNavigator = createAppContainer(MainNavigator)
 
 class Main extends Component {
+
+    constructor(props){
+        super(props);
+        this.state ={
+          favData: FAVORITESDATA
+        }
+      }
+
     render() {
         return (
             <View style={{
                 flex: 1,
                 paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight
             }}>
-                <AppNavigator />
+                <AppNavigator screenProps={{fav:this.state.favData}}/>
             </View>
         );
     }

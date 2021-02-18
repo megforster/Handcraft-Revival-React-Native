@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Image, View, ScrollView, Text, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
+import { Image, View, ScrollView, Text, StyleSheet, Dimensions, TouchableOpacity, ImageComponent} from 'react-native';
 import { Card } from 'react-native-elements';
 import Carousel, { Pagination } from 'react-native-snap-carousel'
 import CAROUSELDATA from '../shared/carouselData'
@@ -10,19 +10,23 @@ const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
 let navigationFunction = null;
 
 const CarouselCardItem = ({item, index}) => {
-    const nav = {navigationFunction}
+    const imgPath = item.imgUrl
+    console.log(imgPath)
     return (
         <View style={styles.container} key={index}>
           <TouchableOpacity
-            onPress = {()=> nav('Resource', {title: item.title})}
+            onPress = {()=> navigationFunction('Resource', {title: item.title})}
           >
             <Image
-                source = {require('./images/logo.png')}
-                // source = {{ uri: item.imgUrl }}
+                source = {imgPath}
+                //source = {require(item.imgUrl)}
+                //source = {(imgPath)}
+                //source = {imgPath}
+                //source = {require(`${imgPath}`)}
+                //source = {{ uri: imgPath }}
                 style={styles.image}
               />
             <Text style={styles.header}>{item.title}</Text>
-            <Text style={styles.body}>{item.body}</Text>
           </TouchableOpacity>
         </View>
       )
