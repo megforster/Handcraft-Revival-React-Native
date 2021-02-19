@@ -1,58 +1,48 @@
 import React, { Component } from "react";
-import {ScrollView, Text, Image, TouchableOpacity, RefreshControl} from 'react-native';
+import {ScrollView, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import { Card } from "react-native-elements";
-import { withNavigation } from "react-navigation";
 
-function RenderFavorites({favorite}){
+function RenderFavorites({favorite, nav}){
     return(
         <TouchableOpacity 
             onPress = {() => nav('Resource', {title: favorite.title})}
         >
-            <Card>
+            <Card containerStyle={styles.card}>
                 <Image
-                    source = {require('./images/logo.png')}
-                    style={{alignSelf:"center"}}
+                    source = {favorite.imgUrl}
+                    style={styles.image}
                 />
                 <Text style={{textAlign:"center"}}>{favorite.title}</Text>
             </Card>
         </TouchableOpacity>
     );
 }
-// function forceRefresh(item){
-//      item.forceUpdate()   
-// }
 
 class Favorites extends Component{
-    componentDidUpdate(){
-        console.log("DidUPdate: "+this.props)
-    }
-
     render(){
-        // const [refreshing, setRefreshing] = React.useState(false);
-        // const onRefresh = React.useCallback(()=>{
-        //     setRefreshing(true);
-        //     withNavigation(2000).then(()=> setRefreshing(false));
-        // },[]);
-        console.log("-----------------------")
-        console.log(this.props)
-        console.log("-----------------------")
         const {navigate} = this.props.navigation;
-        const favorites = this.props.favData.map(item => {
-            return(
-                <RenderFavorites favorite = {item} nav = {navigate}/>
-              )
-            }
-        )
+        const favorites = this.props.screenProps.favData.map((item) => {
+            return <RenderFavorites favorite={item} nav={navigate} />;
+          });
 
         return(
-             <ScrollView
-             // refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>}
-             > 
+             <ScrollView> 
                 <Text style={{marginLeft: 10, fontSize:25}}>Favorites</Text>
                 {favorites}
             </ScrollView>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    image: {
+        width: 300,
+        height: 300,
+        alignSelf: "center",
+    }, 
+    card:{
+        backgroundColor:'#a9d88d'
+    }
+})
 
 export default Favorites;

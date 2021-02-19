@@ -33,19 +33,19 @@ export const RESOURCEDATA = [
         id: 5, 
         title: "Scarves", 
         important: "Scarves are an excellent first project for beginners as they allow users to practice their stitches, starting new rows, changing colors, amd just get a general feel for how crocheting works.", 
-        content: "At its simplest, a scarf if simply repeating the same stitch over and over across multiple rows. You can of course vary your stitches and colors, but a single-stitch single-color scarf is ideal for those just starting out. Each row of a scarf usually constitutes the width of the scarf and adding another row increases the length.\n\nHere are some simple scarf patters if you need a bit of inspiration\n\nhttps://www.thesprucecrafts.com/easy-basic-crochet-scarf-pattern-979069\n\nhttps://www.hookedonhomemadehappiness.com/easy-textured-scarf/\n\nhttps://www.crochetforyoublog.com/2017/09/crochet-easy-ribbed-scarf/"
+        content: "\nAt its simplest, a scarf if simply repeating the same stitch over and over across multiple rows. You can of course vary your stitches and colors, but a single-stitch single-color scarf is ideal for those just starting out. Each row of a scarf usually constitutes the width of the scarf and adding another row increases the length.\n\nHere are some simple scarf patters if you need a bit of inspiration\n\nhttps://www.thesprucecrafts.com/easy-basic-crochet-scarf-pattern-979069\n\nhttps://www.hookedonhomemadehappiness.com/easy-textured-scarf/\n\nhttps://www.crochetforyoublog.com/2017/09/crochet-easy-ribbed-scarf/"
     },
     {
         id: 6, 
         title: "Small Shapes", 
         important: "Crocheting small shapres are a great way to branch out from making square or rectangular projects and improve one's pattern reading ability.", 
-        content: "A lot of crochet shapes have what is called a magic circle as thier base. It is a good idea to master the magic cirlce as not only does it feature in small shapes but plays a role in a lot of other projects. \n\nBelow are the instructions for a magic circle.\n1) Lay your yarn out on a flat surface and make a loop in the end of your yarn\n2) Insert your hook in the middle of the circle and yarn over\n3) Draw your hook back through the circle 4)Chain one\n\nHere are some small shape patterns to get you started on your journey\n\nhttps://www.mooglyblog.com/how-to-make-5-basic-crochet-shapes-free-patterns-and-links/\n\nhttps://loopsandlovecrochet.com/2019/01/12/easy-crochet-hearts/\n\nhttps://www.stitching-together.com/simple-stars/"
+        content: "\nA lot of crochet shapes have what is called a magic circle as thier base. It is a good idea to master the magic cirlce as not only does it feature in small shapes but plays a role in a lot of other projects. \n\nBelow are the instructions for a magic circle.\n1) Lay your yarn out on a flat surface and make a loop in the end of your yarn\n2) Insert your hook in the middle of the circle and yarn over\n3) Draw your hook back through the circle 4)Chain one\n\nHere are some small shape patterns to get you started on your journey\n\nhttps://www.mooglyblog.com/how-to-make-5-basic-crochet-shapes-free-patterns-and-links/\n\nhttps://loopsandlovecrochet.com/2019/01/12/easy-crochet-hearts/\n\nhttps://www.stitching-together.com/simple-stars/"
     }, 
     {
         id: 7, 
         title: "Blankets", 
-        important: "Important!!", 
-        content: "Content :)"
+        important: "Blanket are a fantastic way to really practice a stitch, color changing, pattern reading, and test your endurance as a corcheter. Blankets also make an excellent gift, and there are so many different patterns and designs to choose from!", 
+        content: "\nA blanket is another execellent project for beginners, though perhaps not one of the first due to the time comittment. Much like a scarf, a blanket (at its simpliest) is the same repeting stitch over and over with maybe some color changes. For a more thrilling design, there are chevron blankets, granny square blankets. and corner-to-corner blankets (which allow you to make a pixelated design). \n\nHere are a few ideas and patterns to help you get started:\n\nhttps://daisycottagedesigns.net/chevron-blanket-crochet-pattern/ \n\n https://www.thesprucecrafts.com/how-to-crochet-classic-granny-square-3576784 \n\nhttps://annabooshouse.blogspot.com/2016/11/the-enormous-squishy-blamket.html"
     }, 
     {
         id: 8, 
@@ -62,38 +62,38 @@ export const RESOURCEDATA = [
     {
         id: 10, 
         title: "Who Crocheted?", 
-        important: "Important!!", 
-        content: "Content :)"
+        important: "Understanding who crocheted and why goes a long way to improving our understanding of crochet's evolution. It also gives us a glimpse into the past and insight into what people's lives were like.", 
+        content: "\nNuns\nSome evidence point to crochet being practied by Italian nn's in the 1500s, though it was called nun's work or nun's lace rather then crochet. Some sources disagree and state that any semblance of crochet did not reach Europe intil the 18th century.\n\nHunters and Fishermen\nIn early centries hunters and fishermen would create traps and nets by knotting strands of woven fibers, cords, or cloth. This handwork was later used to create decorations for special occosions or even ceremonial costumes.\n\nThe Irish Famine\nCrochet was a huge part of the Irish potato famine, with some historians arguing it is what pulled Ireland out of the famine. Everone crocheted during this time between chores during the day and by candle by night. Men, women, and children were organized into crochet cooperatives and schools were even set up to teach the skill and train teachers. For many of the Irish, their ability to sell their crochet works abroad was what kept them alive. When many Irish citizens immifrated to America between 1845 and 1859, they brought their crochet with them (and American women quickly picked up the skill too).\n\nWomen\nBy the 1900s women were the main crocheters compared to men. They tended to crochet household items such as afghans, cushions, coffee and tea cozies, potholders, and rugs. This provided the springboard needed to make crochet the powerhouse of freeform expression it is today."
     }, 
     {
         id: 11, 
         title: "The Crochet Crowd", 
-        important: "",
+        important: "The Crochet Crowd was founded by Michael Sellick and co-creater Daniel Zondervan. Michael was inspirited to persue The Crochet Crowd to pass on his knowledge and skill as he has no children of his own. Interstingly enough, the creation of The Crochet Crowd was a bit of a fluke. Michael started out posting tutorials on YouTube, which he only began doing after being bored one afternoon adn stumbling on the site!\n\nDaniel only became invested in yarn arts and The Crochet Crowd after meeting Michael and eventually becoming his life partner. He was previously a musician, even graduating from college with a music foundation, though eventually grew out of music and left the music profession entirely.\n\nJeanne Steinhilber is another team member, joining The Crochet Crowd in 2015 after attending a crochet cruise. She was mentored by Michael who inspiried her to jump into the world of design after she learned to crochet as a child.",
         content: "\nTwitter: https://twitter.com/thecrochetcrowd\n\nInstagram: https://www.instagram.com/thecrochetcrowd/?hl=en\n\nFacebook:https://www.facebook.com/groups/TheCrochetCrowdStitchSocial\n\nYouTube: https://www.youtube.com/channel/UCVbbBdiTKMCx5VII4IKDU7A\n\nPintrest: https://pinterest.com/thecrochetcrowd", 
     }, 
     {
         id: 12, 
         title: "Moogly", 
-        important: "Important!!", 
-        content: "Content :)"
+        important: "Moogly is a corchet/knitting blog run by Tamara Kelly: designer, writier, blogger, and mother of three. Moogly originally started off as a mommy blog before transitioning into a crochet and knit business site. Eventually after Tamara realized commission work wasn't her passion, and Moogly evolved into what it is today.\n\nFun fact, according to Tamara, Moogly was a phrase coined by her daughter when she was a toddler. It is supposed to mean something 'wobbly, off-kilter, silly, or teeter-tottery'.", 
+        content: "\nFacebook: https://www.facebook.com/mooglystore \n\nTwitter: https://twitter.com/intent/follow?original_referer=http%3A%2F%2Fwww.mooglyblog.com%2F&screen_name=mooglyblog&source=followbutton&variant=2.0 \n\nPintrest: https://www.pinterest.com/moogly?utm_source=creatorexp&utm_pia \n\nYouTube: https://www.youtube.com/user/mooglyblog \n\nInstagram: https://instagram.com/mooglyblog"
     }, 
     {
         id: 13, 
         title: "Bella Coco", 
-        important: "Important!!", 
-        content: "Content :)"
+        important: "Bella Coco is a blog run by Sarah-Jayne founded in 2011. The orginal focus was to share all of her passions, not just crochet. Starting in 2013 she began posting crochet tutorials on YouTube and since then has been producing new content practically every week. Staring in 2017 she partnered with lovecrochet.com to host a Bella Coco store where crocheters can shop reccomended and exclusive yarns.", 
+        content: "\nFacebook: https://www.facebook.com/groups/bellacococrochetclub/ \n\nInstagram: http://www.instagram.com/bellacococrochet \n\nPintrest: http://www.pinterest.com/bellacoco86 \n\nTwitter: http://www.twitter.com/bellacocrochet \n\nYouTube: http://www.youtube.com/sa8rah56"
     }, 
     {
         id: 14, 
         title: "Creating Crochet Patterns", 
-        important: "Important!!", 
-        content: "Content :)"
+        important: "Creating crochet patterns allows you to share any of your own creations with the world! A fundamental principle of crochet is the creation, sharing, and use of patterns. As a plus, creating a pattern helps you to better understand patterns others have written.", 
+        content: "\nCreating original patterns can seem difficult, but if you break the task into a few simple steps you'll have a pattern in no time!\n\n1) Practice writing out patterns you already know\n\n2) Practice writing down simple patterns from memory\n\n3) Create a very simple, very basic pattern\n\n4) Test your pattern and make any necessary improvements \n\n5) Repeat until you have a pattern you are happy with!\n\nFor more detailed guidance, check out these resources\n\nhttps://www.craftsy.com/post/how-to-create-a-crochet-pattern/\n\nhttps://www.craftsy.com/class/reading-understanding-crochet-patterns/\n\nhttps://www.craftsy.com/class/reading-understanding-crochet-patterns/"
     },
     {
         id: 15, 
         title: "Complex Stitches", 
-        important: "Important!!", 
-        content: "Content :)"
+        important: "Learning to crochet more complex stitches can be an exciting challenge! It allows you to add more flare to your projects and flex your crochet skills. As another plus, many of the prettiest crochet stitches are the more complex ones!", 
+        content: "\nMany complex crochet stitches are simply made up of the basic stiches combined together to create something unique. This is why it is very important to have a sold understanding of crochet basics before moving onto complex stitches. \n\nAn excellent stitch to start with would be corner-to-corner (i.e. C2C). This stitch allows you to create a triangle by crocheting squares togehter (two triangles together makes a blanket, a common C2C project). This stitch may seem tricky at first, but after a few rows you'll be flying through them.\n\nAnother great complex stitch to start off with would be Pineapple Lace. Desite its extremely fancy looks (which some say resemble the pineapple it is named after), it is made up of some of the simplest stitches. A classic example of basic concepts coming together to form grand creations. This stitch is most commonly learned using a chart, but there are written instructions as well. \n\nThe Star Stitch is another popular choice and, like the Pineapple Lace, was named for what it resembled; a swatch of start stitches resembles a clustar of stars. It is mainly comprised of chain, slip, and half-double stitches, though tends to slant if you are not careful."
     }, 
     {
         id: 16, 
@@ -104,7 +104,7 @@ export const RESOURCEDATA = [
     {
         id: 17, 
         title: "Slip Knots, Chaining, And Slip Stitches",
-        important: "Important!!", 
-        content: "Content :)"
+        important: "Slip knots, chaining, and slip stitches are the fundamental backbone of rcohet. Without these stitches, you don't have crochet. Learning to corchet these three are some of the first steps you will take on your crochet journey. Mastering them will provide you with the foundation you need to master crochet.", 
+        content: "\nSlip Knot\nHold the tail end of the yarn facing you with the working end behind it and pinch the two ends together with your middle and ring fingers, poking your index finder between the two yarn ends. Slip your corchet hook (facing updwards) between your index finger and the yarn. Twist the two ends of yarn around the hook so that the yarn makes a circle around the hook. Yarn over the hook and draw through the loop. Adjust the loop as needed.\n\nChaining\nMake a slip knot on your hook before beginning. After, yarn over and draw through the loop. This is one chain stitch. When continuing to chain, keep in mind the your tension, too much tension can result in tight, unworkable chains while not enough tension can lead to extremely lose chains.\n\nSlip Stitch\nInsert your hook into the stitch you want to slip stitch onto (note you should have a loop on your hook to begin with). Yarn over, and pull through both loops on your hook. Due to their ability to be used at any point after starting your project, slip stitches are a very useful and handy stitch. They can be used to join crocheted elements together, decorate the surface of a crocheted piece, join a round, and to form a ring."
     }
 ]

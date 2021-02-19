@@ -3,10 +3,10 @@ import {ScrollView, Text, Image, TouchableOpacity, StyleSheet} from 'react-nativ
 import { Card } from "react-native-elements";
 import {TOPICDATA} from '../shared/topicData'
 
-function RenderTopics({topic, nav, fav}){
+function RenderTopics({topic, nav}){
     return(
         <TouchableOpacity 
-            onPress = {() => nav('Resource', {title: topic.title, favorite:fav})}
+            onPress = {() => nav('Resource', {title: topic.title, imgUrl: topic.imgUrl})}
         >
             <Card containerStyle={styles.card}>
                 <Image
@@ -32,7 +32,7 @@ class Advanced extends Component{
         const {navigate} = this.props.navigation;
         const advancedData = this.state.topicData.filter(item => item.topic === "Advanced").map(item => {
             return(
-                <RenderTopics topic = {item} nav={navigate} fav={this.props.screenProps}/>
+                <RenderTopics topic = {item} nav={navigate}/>
               )
             }
         )

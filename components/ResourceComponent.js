@@ -3,7 +3,7 @@ import {View, ScrollView, Text, Image} from 'react-native';
 import { Icon } from "react-native-elements";
 import {RESOURCEDATA} from '../shared/resourceData'
 
-function RenderResource({info, update}){
+function RenderResource({info, update, imgUrl}){
     return(
         <ScrollView>
             <View style={{flex:1, flexDirection: 'row', justifyContent:"space-between"}}>
@@ -11,11 +11,11 @@ function RenderResource({info, update}){
                 <Icon
                     name="heart"
                     type="font-awesome"
-                    color='#a9d88d'
+                    color="#a9d88d"
                     raised
                     reverse
-                    size = {15}
-                    onPress={() => update({id:info.title, title:info.title})}
+                    size={15}
+                    onPress={() => update({ id: info.id, title: info.title, imgUrl: imgUrl })}
                 />
             </View>
             <View style={{borderBottomColor: '#a9d88d',borderBottomWidth: 1, marginLeft:10, marginRight:10, marginTop:10}}/>
@@ -36,20 +36,21 @@ class Resource extends Component{
         }
     }
 
-    render(){
-         //console.log(this.props)
-        const data = this.state.resourceData.filter(item => item.title === this.props.navigation.state.params.title).map(item => {
+    render() {
+        const data = this.state.resourceData
+          .filter((item) => item.title === this.props.navigation.state.params.title)
+          .map((item) => {
+              console.log(item)
             return (
-                <RenderResource info = {item} update = {this.props.updateFavorites}/>
-            )
-        });
-
-        return(
-            <ScrollView>
-                {data}
-            </ScrollView>
-        );
-    }
+              <RenderResource
+                info={item}
+                update={this.props.screenProps.updateFavorites}
+                imgUrl = {this.props.navigation.state.params.imgUrl}
+              />
+            );
+          });
+        return <ScrollView>{data}</ScrollView>;
+      }
 }
 
 export default Resource;

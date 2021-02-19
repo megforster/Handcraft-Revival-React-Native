@@ -6,7 +6,7 @@ import {TOPICDATA} from '../shared/topicData'
 function RenderTopics({topic, nav}){
     return(
         <TouchableOpacity 
-            onPress = {() => nav('Resource', {title: topic.title})}
+            onPress = {() => nav('Resource', {title: topic.title, imgUrl: topic.imgUrl})}
         >
             <Card containerStyle={styles.card}>
                 <Image
