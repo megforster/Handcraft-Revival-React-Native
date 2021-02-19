@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {View, Text, Button, StyleSheet, TextInput, Image, Alert} from 'react-native';
+import {View, Text, Button, StyleSheet, TextInput, Image, Alert, TouchableOpacity} from 'react-native';
 import { Card } from 'react-native-elements';
 
 class Suggestions extends Component{
@@ -75,13 +75,20 @@ class Suggestions extends Component{
                         style={styles.textInput}
                         value = {this.state.r3} 
                         onChangeText={text => this.setState({r3: text})}/>
-                    <Button 
+                    {/* <Button 
                         style={{borderColor:"white", borderWidth:1}}
                         title="Submit" 
                         onPress={()=> this.handleSubmit()} 
                         color='#a9d88d'
                         
-                    />
+                    /> */}
+                    <TouchableOpacity
+                        onPress = {()=> this.handleSubmit()}
+                        style={{shadowRadius:10, shadowColor:"black"}}
+                    >
+                        <Text style={styles.buttonText}>Submit</Text>
+                        
+                    </TouchableOpacity>
                 </Card>
                 <Image
                     source = {require('./images/logo.png')}
@@ -105,9 +112,20 @@ const styles = StyleSheet.create({
     card:{
         backgroundColor:'#a9d88d'
     } , 
-    button:{
-        borderWidth: 1,
-        borderColor: 'white'
+    
+    buttonText:{
+        alignSelf:'center', 
+        color: "white",
+        borderColor:"white",
+        borderWidth: 1, 
+        borderRadius:10,
+        paddingLeft: 30, 
+        paddingRight: 30, 
+        paddingTop: 10,
+        paddingBottom: 10, 
+        textShadowColor:"black", 
+        textShadowRadius: 10
+
     }
 })
 

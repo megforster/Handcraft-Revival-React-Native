@@ -66,7 +66,7 @@ const CarouselCards = () =>{
 function RednerFavoriteCards({favorite, nav}){
   return(
     <TouchableOpacity
-      onPress = {()=> nav('Resource', {title: favorite.title})}
+      onPress = {()=> nav('Resource', {title: favorite.title, imgUrl: favorite.imgUrl})}
     >
       <Card containerStyle={styles.card}>
         <Image
