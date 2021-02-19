@@ -13,7 +13,7 @@ const CarouselCardItem = ({item, index}) => {
     return (
         <View style={styles.container} key={index}>
           <TouchableOpacity
-            onPress = {()=> navigationFunction('Resource', {title: item.title})}
+            onPress = {()=> navigationFunction('Resource', {title: item.title, imgUrl: item.imgUrl})}
           >
             <Image
                 source = {item.imgUrl}

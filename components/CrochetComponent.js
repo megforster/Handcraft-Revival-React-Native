@@ -17,7 +17,6 @@ class Crochet extends Component{
                     isMuted={false}
                     resizeMode="cover"
                     shouldPlay
-                    isLooping
                     useNativeControls
                     style={{width: 400, height: 300, marginTop:10}}
                 />
