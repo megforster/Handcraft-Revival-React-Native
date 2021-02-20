@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {View, Text, Image, ScrollView, StyleSheet} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
 import { Video } from "expo-av";
 
 class Crochet extends Component{
@@ -16,23 +16,13 @@ class Crochet extends Component{
                     rate={1.0}
                     isMuted={false}
                     resizeMode="cover"
-                    shouldPlay
                     useNativeControls
+                    shouldPlay
                     style={{width: 400, height: 300, marginTop:10}}
                 />
             </ScrollView>
         );
     }
 }
-
-var styles = StyleSheet.create({
-    backgroundVideo: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      bottom: 0,
-      right: 0,
-    },
-  });
 
 export default Crochet;
